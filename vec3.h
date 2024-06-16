@@ -14,6 +14,7 @@ struct vec3 {
 		x(_x), y(_y), z(_z) { }
 	 inline vec3(float *fv) :
 		 x(fv[0]), y(fv[1]), z(fv[2]) { }
+
 	 };
 
 		vec3 operator+(const vec3& l, const vec3 &r);
@@ -38,7 +39,11 @@ struct vec3 {
 		vec3 slerp(const vec3& s, const vec3& e, float t);
 		vec3 nlerp(const vec3& s, const vec3& e, float t);
 
+		inline float degreesToRadians(float degrees);
+		vec3 toRadians(const vec3& degreesVec);
 #endif #pragma once
+		//should use globals instead of local definition
 #define VEC3_EPSILON 0.000001f
 #define VEC3_TODEGREES 57.2958f
 #define VEC3_TORADIANS 0.0174533f
+#define PI 3.141592653589793 //should make a global definition

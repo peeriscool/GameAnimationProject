@@ -21,8 +21,10 @@ void Chapter09Sample02::Initialize() {
 	mStaticShader = new shader("Resources/staticVert.shader", "Resources/LitFrag.shader");
 	mSkinnedShader = new shader("Resources/SkinnedVertex.shader", "Resources/LitFrag.shader");
 	mDiffuseTexture = new Texture("Resources/Woman.png");
+	
 	mGPUAnimInfo.mAnimatedPose = mSkeleton.GetRestPose();
 	mGPUAnimInfo.mPosePalette.resize(mSkeleton.GetRestPose().Size());
+	
 	mCPUAnimInfo.mAnimatedPose = mSkeleton.GetRestPose();
 	mCPUAnimInfo.mPosePalette.resize(mSkeleton.GetRestPose().Size());
 

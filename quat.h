@@ -7,7 +7,7 @@
 
 struct quat
 {
-	union 
+	union //definitions
 	{
 		struct 
 		{
@@ -23,11 +23,14 @@ struct quat
 		};
 		float v[4];
 	};
+	//constructors
 	inline quat():
 		x(0),y(0),z(0),w(1) {}
 	inline quat(float _x,float _y,float _z,float _w):x(_x),y(_y),z(_z),w(_w){}
+	inline quat(vec3& vector, float scalar): x(vector.x), y(vector.y), z(vector.z), w(scalar){}
+		
 };
-
+//functions
 quat angleAxis(float angle, const vec3& axis);
 quat fromTo(const vec3& from, const vec3& to);
 vec3 getAxis(const quat& quat);

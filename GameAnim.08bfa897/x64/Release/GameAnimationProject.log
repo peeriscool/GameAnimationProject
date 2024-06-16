@@ -1,0 +1,44 @@
+﻿  Attribute.cpp
+  Chapter06Sample01.cpp
+  Chapter09Sample01.cpp
+  Chapter09Sample02.cpp
+  DebugDraw.cpp
+  GLTFLoader.cpp
+C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\GLTFLoader.cpp(221,25): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\GLTFLoader.cpp(71,39): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\GLTFLoader.cpp(71,39):
+  the template instantiation context (the oldest one first) is
+  	C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\GLTFLoader.cpp(185,18):
+  	see reference to function template instantiation 'void GLTFHelpers::TrackFromChannel<vec3,3>(Track<vec3,3> &,const cgltf_animation_channel &)' being compiled
+  
+  Mesh.cpp
+C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\Mesh.cpp(115,24): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\Mesh.cpp(124,33): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  MyDemoApp.cpp
+  WinMain.cpp
+C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\WinMain.cpp(172,17): warning C4244: 'initializing': conversion from 'ULONGLONG' to 'DWORD', possible loss of data
+C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\WinMain.cpp(185,18): warning C4244: 'initializing': conversion from 'ULONGLONG' to 'DWORD', possible loss of data
+  Generating code
+  12 of 1737 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    16 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  GameAnimationProject.vcxproj -> C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\x64\Release\GameAnimationProject.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\Archer.bin
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\Archer.gltf
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\CesiumMilkTruck.gltf
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\CesiumMilkTruck.jpg
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\CesiumMilkTruck_data.bin
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\CesiumMilkTruck_Embeded.gltf
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\LitFrag.shader
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\Material_baseColor.png
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\Shape.bin
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\Shape.gltf
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\SkinnedVertex.shader
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\staticVert.shader
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\uv.png
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\Woman.gltf
+  C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\\Resources\Woman.png
+  15 File(s) copied

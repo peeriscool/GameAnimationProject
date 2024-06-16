@@ -67,7 +67,7 @@ vec4 operator*(const mat4& m, const vec4& v) {
 		M4V4D(3, v.x, v.y, v.z, v.w)
 	);
 }
-
+//vec3 transform using refrenced matrix 
 vec3 transformVector(const mat4& m, const vec3& v) {
 	return vec3(
 		M4V4D(0, v.x, v.y, v.z, 0.0f),
@@ -75,11 +75,13 @@ vec3 transformVector(const mat4& m, const vec3& v) {
 		M4V4D(2, v.x, v.y, v.z, 0.0f)
 	);
 }
+//vec3 transform 
 vec3 transformPoint(const mat4& m, const vec3& v) {
 	return vec3(
 		M4V4D(0, v.x, v.y, v.z, 1.0f),
 		M4V4D(1, v.x, v.y, v.z, 1.0f),
 		M4V4D(2, v.x, v.y, v.z, 1.0f)
+		//W component = 1
 	);
 }
 vec3 transformPoint(const mat4& m, const vec3& v, float&
@@ -92,6 +94,7 @@ vec3 transformPoint(const mat4& m, const vec3& v, float&
 		M4V4D(2, v.x, v.y, v.z, _w)
 	);
 }
+//flip element diagonal
 #define M4SWAP(x, y) \
 {float t = x; x = y; y = t; }
 void transpose(mat4& m) {
@@ -115,7 +118,7 @@ mat4 transposed(const mat4& m) {
      m.v[c1 * 4 + r0] * (m.v[c0 * 4 + r1] * m.v[c2 * 4 + r2] - m.v[c0 * 4 + r2] * m.v[c2 * 4 + r1]) + \
      m.v[c2 * 4 + r0] * (m.v[c0 * 4 + r1] * m.v[c1 * 4 + r2] - m.v[c0 * 4 + r2] * m.v[c1 * 4 + r1]))
 
-
+//multiply each element by the co factor 40/4/8/12
 float determinant(const mat4& m) {
 	return  m.v[0] * M4_3X3MINOR(1, 2, 3, 1, 2, 3)
 		- m.v[4] * M4_3X3MINOR(0, 2, 3, 1, 2, 3)
@@ -168,7 +171,8 @@ void invert(mat4& m) {
 	}
 	m = adjugate(m) * (1.0f / det);
 }
-
+//create camera frustrum. (Camera Space)
+//Left, Right, Bottom, Top, Near, Far.
 mat4 frustum(float l, float r, float b,
 	float t, float n, float f) {
 	if (l == r || t == b || n == f) {
@@ -182,11 +186,13 @@ mat4 frustum(float l, float r, float b,
 		0, 0, (-2 * f * n) / (f - n), 0
 	);
 }
+//fov in degrees, aspect, Near, Far
 mat4 perspective(float fov, float aspect, float n, float f) {
 	float ymax = n * tanf(fov * 3.14159265359f / 360.0f);
 	float xmax = ymax * aspect;
 	return frustum(-xmax, xmax, -ymax, ymax, n, f);
 }
+//Left, Right, Bottom, Top, Near, Far.
 mat4 ortho(float l, float r, float b, float t,
 	float n, float f) {
 	if (l == r || t == b || n == f) {
@@ -199,6 +205,7 @@ mat4 ortho(float l, float r, float b, float t,
 		-((r + l) / (r - l)), -((t + b) / (t - b)), -((f + n) / (f - n)), 1
 	);
 }
+//generate inverted matrix with pos, rot & scale for camera transform 
 mat4 lookAt(const vec3& position, const vec3& target,
 	const vec3& up) {
 	vec3 f = normalized(target - position) * -1.0f;

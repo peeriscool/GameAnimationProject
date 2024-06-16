@@ -135,3 +135,16 @@ vec3 nlerp(const vec3& s, const vec3& e, float t)		//cheaper, close approx of sl
 	);
 	return normalized(linear);
 }
+
+inline float degreesToRadians(float degrees) {
+	return degrees * static_cast<float>(PI) / 180.0f;
+}
+
+// Function to convert vec3 from degrees to radians
+vec3 toRadians(const vec3& degreesVec) {
+	return vec3(
+		degreesToRadians(degreesVec.x),
+		degreesToRadians(degreesVec.y),
+		degreesToRadians(degreesVec.z)
+	);
+}

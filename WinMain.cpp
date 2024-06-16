@@ -13,7 +13,7 @@
 //#include "Chapter06Sample01.h"
 #include "MyDemoApp.h"
 //#include "Chapter09Sample02.h"
-
+#include "globals.h"
 #ifndef GET_X_LPARAM
 #define GET_X_LPARAM(lp) ((int)(short)LOWORD(lp))
 #endif
@@ -21,6 +21,7 @@
 #ifndef GET_Y_LPARAM
 #define GET_Y_LPARAM(lp) ((int)(short)HIWORD(lp))
 #endif
+bool keys[256] = { false };
 MyApp Myapp;
 int WINAPI WinMain(HINSTANCE, HINSTANCE, PSTR, int);
 LRESULT CALLBACK Wndproc(HWND, UINT, WPARAM, LPARAM);
@@ -78,8 +79,8 @@ int WINAPI WinMain(HINSTANCE HInstance, HINSTANCE hPrevInstance, PSTR szCMDLine,
 	//creating rectangle viewport
 	int screenWidth = GetSystemMetrics(SM_CXSCREEN);
 	int screenHeigth = GetSystemMetrics(SM_CYSCREEN);
-	int clientWidth = 800;
-	int clientHeight = 600;
+	int clientWidth = 1280;
+	int clientHeight = 720;
 	RECT windowRect;
 	SetRect(&windowRect,
 	(screenWidth/2) - (clientWidth / 2) ,
@@ -278,7 +279,13 @@ LRESULT CALLBACK Wndproc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lparam)
 			// Example: ProcessLeftButtonUp();
 			break;
 		}
-						 // Add handling for other mouse messages as needed
+		case WM_KEYDOWN:
+			keys[wParam] = true; // Mark the key as pressed
+			break;
+
+		case WM_KEYUP:
+			keys[wParam] = false; // Mark the key as released
+			break;				 
 			return 0;
 	}
 	return DefWindowProc(hwnd, iMsg, wParam, lparam);
