@@ -1,6 +1,6 @@
 # Prerequisites
 *.d
-
+/.vs
 # Compiled Object files
 *.slo
 *.lo
@@ -25,8 +25,12 @@
 *.la
 *.a
 *.lib
+*.ipch
+*.tlog
+
 
 # Executables
 *.exe
 *.out
 *.app
+*.vsidx

@@ -1,0 +1,6 @@
+﻿  MyDemoApp.cpp
+C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\MyDemoApp.cpp(43,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\MyDemoApp.cpp(43,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GameAnimationProject.vcxproj -> C:\OpenGlProject\GameAnimationProgramming\GameAnimationProject\x64\Debug\GameAnimationProject.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
